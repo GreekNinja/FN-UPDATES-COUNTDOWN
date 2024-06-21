@@ -10,8 +10,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: url('https://pbs.twimg.com/media/GQm6a0OW0AABfCP?format=jpg&name=large') no-repeat center center fixed; /* Replace with an actual Fortnite background image URL */
+            min-height: 100vh;
+            background: url('https://pbs.twimg.com/media/GQm6a0OW0AABfCP?format=jpg&name=large') no-repeat center center fixed; /* Replace with the uploaded background image URL */
             background-size: cover;
             color: white;
             font-family: 'Burbank Big Condensed', Arial, sans-serif; /* Fortnite-like font */
@@ -23,21 +23,17 @@
             padding: 20px;
             text-align: center;
             width: 80%;
-            max-width: 600px;
-            margin: 20px;
+            max-width: 400px;
+            margin: 20px 0;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 10px 0;
             text-transform: uppercase;
         }
         .timer {
             font-size: 1.5em;
-            margin: 20px 0;
-        }
-        .time {
-            font-size: 2em;
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .header {
             text-align: center;
@@ -50,7 +46,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="https://example.com/fortnite-logo.png" alt="Fortnite Logo"> <!-- Replace with an actual Fortnite logo image URL -->
+        <img src="https://static.wikia.nocookie.net/fortnite/images/b/b6/Logo-a-go-go_-_Back_Bling_-_Fortnite.png/revision/latest?cb=20220210001146" alt="Fortnite Logo"> <!-- Replace with an actual Fortnite logo image URL -->
     </div>
     <div class="container">
         <h1>Update v30.20 Countdown</h1>
@@ -87,14 +83,14 @@
 
     <script>
         const updates = [
-            { id: 'countdown-v3020', date: new Date('June 25, 2024 00:00:00') },
-            { id: 'countdown-v3030', date: new Date('July 23, 2024 00:00:00') },
-            { id: 'countdown-v3040', date: new Date('August 6, 2024 00:00:00') },
-            { id: 'countdown-season4', date: new Date('August 16, 2024 00:00:00') },
-            { id: 'countdown-v3100', date: new Date('September 4, 2024 00:00:00') },
-            { id: 'countdown-v3120', date: new Date('September 17, 2024 00:00:00') },
-            { id: 'countdown-v3130', date: new Date('October 1, 2024 00:00:00') },
-            { id: 'countdown-v3140', date: new Date('October 15, 2024 00:00:00') },
+            { id: 'countdown-v3020', date: new Date('June 25, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-v3030', date: new Date('July 23, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-v3040', date: new Date('August 6, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-season4', date: new Date('August 16, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-v3100', date: new Date('September 4, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-v3120', date: new Date('September 17, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-v3130', date: new Date('October 1, 2024 09:00:00 GMT+0300') },
+            { id: 'countdown-v3140', date: new Date('October 15, 2024 09:00:00 GMT+0300') },
         ];
 
         function updateTimer(id, endDate) {
