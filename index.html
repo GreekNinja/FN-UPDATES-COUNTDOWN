@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite Updates Countdown</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://pbs.twimg.com/media/GQm6a0OW0AABfCP?format=jpg&name=large') no-repeat center center fixed; /* Replace with an actual Fortnite background image URL */
+            background-size: cover;
+            color: white;
+            font-family: 'Burbank Big Condensed', Arial, sans-serif; /* Fortnite-like font */
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        .timer {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .time {
+            font-size: 2em;
+            margin: 5px 0;
+        }
+        .header {
+            text-align: center;
+            margin: 20px;
+        }
+        .header img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://example.com/fortnite-logo.png" alt="Fortnite Logo"> <!-- Replace with an actual Fortnite logo image URL -->
+    </div>
+    <div class="container">
+        <h1>Update v30.20 Countdown</h1>
+        <div class="timer" id="countdown-v3020">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Update v30.30 Countdown</h1>
+        <div class="timer" id="countdown-v3030">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Update v30.40 Countdown</h1>
+        <div class="timer" id="countdown-v3040">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Season 4 Countdown</h1>
+        <div class="timer" id="countdown-season4">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Update v31.00 Countdown</h1>
+        <div class="timer" id="countdown-v3100">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Update v31.20 Countdown</h1>
+        <div class="timer" id="countdown-v3120">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Update v31.30 Countdown</h1>
+        <div class="timer" id="countdown-v3130">00d 00h 00m 00s</div>
+    </div>
+    <div class="container">
+        <h1>Update v31.40 Countdown</h1>
+        <div class="timer" id="countdown-v3140">00d 00h 00m 00s</div>
+    </div>
+
+    <script>
+        const updates = [
+            { id: 'countdown-v3020', date: new Date('June 25, 2024 00:00:00') },
+            { id: 'countdown-v3030', date: new Date('July 23, 2024 00:00:00') },
+            { id: 'countdown-v3040', date: new Date('August 6, 2024 00:00:00') },
+            { id: 'countdown-season4', date: new Date('August 16, 2024 00:00:00') },
+            { id: 'countdown-v3100', date: new Date('September 4, 2024 00:00:00') },
+            { id: 'countdown-v3120', date: new Date('September 17, 2024 00:00:00') },
+            { id: 'countdown-v3130', date: new Date('October 1, 2024 00:00:00') },
+            { id: 'countdown-v3140', date: new Date('October 15, 2024 00:00:00') },
+        ];
+
+        function updateTimer(id, endDate) {
+            const now = new Date().getTime();
+            const timeLeft = endDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById(id).innerHTML =
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (timeLeft < 0) {
+                document.getElementById(id).innerHTML = 'The update has started!';
+            }
+        }
+
+        function startTimers() {
+            updates.forEach(update => {
+                setInterval(() => updateTimer(update.id, update.date), 1000);
+            });
+        }
+
+        startTimers();
+    </script>
+</body>
+</html>
